@@ -59,8 +59,8 @@ const questions = [
   const replacements = {
     "class-PREFIX": "class-" + response.prefix.replace(/_/g, "-"),
     PREFIX: response.prefix,
-    FIELD_LABEL: response.fieldLabel,
-    FIELD_NAME: response.fieldLabel.toLowerCase().replace(/[-\s]/g, "_"),
+    image_cropper: response.fieldLabel,
+    imagecropper: response.fieldLabel.toLowerCase().replace(/[-\s]/g, "_"),
     "FIELD-NAME": response.fieldLabel.toLowerCase().replace(/[_\s]/g, "-"),
     TEXTDOMAIN: response.textDomain,
   };

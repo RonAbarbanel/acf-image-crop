@@ -8,9 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * PREFIX_acf_field_FIELD_NAME class.
+ * PREFIX_acf_field_imagecropper class.
  */
-class PREFIX_acf_field_FIELD_NAME extends \acf_field {
+class PREFIX_acf_field_imagecropper extends \acf_field {
 	/**
 	 * Controls field type visibilty in REST requests.
 	 *
@@ -34,14 +34,14 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		 *
 		 * No spaces. Underscores allowed.
 		 */
-		$this->name = 'FIELD_NAME';
+		$this->name = 'imagecropper';
 
 		/**
 		 * Field type label.
 		 *
 		 * For public-facing UI. May contain spaces.
 		 */
-		$this->label = __( 'FIELD_LABEL', 'TEXTDOMAIN' );
+		$this->label = __( 'image_cropper', 'TEXTDOMAIN' );
 
 		/**
 		 * The category the field appears within in the field type picker.
@@ -61,7 +61,7 @@ class PREFIX_acf_field_FIELD_NAME extends \acf_field {
 		 * Allows JS strings to be translated in PHP and loaded in JS via:
 		 *
 		 * ```js
-		 * const errorMessage = acf._e("FIELD_NAME", "error");
+		 * const errorMessage = acf._e("imagecropper", "error");
 		 * ```
 		 */
 		$this->l10n = array(
