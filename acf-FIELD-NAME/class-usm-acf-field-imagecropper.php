@@ -8,9 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * PREFIX_acf_field_imagecropper class.
+ * usm_acf_field_imagecropper class.
  */
-class PREFIX_acf_field_imagecropper extends \acf_field {
+class usm_acf_field_imagecropper extends \acf_field {
 	/**
 	 * Controls field type visibilty in REST requests.
 	 *
@@ -69,7 +69,7 @@ class PREFIX_acf_field_imagecropper extends \acf_field {
 		);
 
 		$this->env = array(
-			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-FIELD-NAME directory.
+			'url'     => site_url( str_replace( ABSPATH, '', __DIR__ ) ), // URL to the acf-imagecropper directory.
 			'version' => '1.0', // Replace this with your theme or plugin version constant.
 		);
 
@@ -140,20 +140,20 @@ class PREFIX_acf_field_imagecropper extends \acf_field {
 		$version = $this->env['version'];
 
 		wp_register_script(
-			'PREFIX-FIELD-NAME',
+			'usm-imagecropper',
 			"{$url}assets/js/field.js",
 			array( 'acf-input' ),
 			$version
 		);
 
 		wp_register_style(
-			'PREFIX-FIELD-NAME',
+			'usm-imagecropper',
 			"{$url}assets/css/field.css",
 			array( 'acf-input' ),
 			$version
 		);
 
-		wp_enqueue_script( 'PREFIX-FIELD-NAME' );
-		wp_enqueue_style( 'PREFIX-FIELD-NAME' );
+		wp_enqueue_script( 'usm-imagecropper' );
+		wp_enqueue_style( 'usm-imagecropper' );
 	}
 }

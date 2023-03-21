@@ -1,8 +1,8 @@
 /**
  * Rename script. Run with `npm ci && npm run rename`.
  *
- * Run before copying the acf-FIELD-NAME folder to your theme or plugin so that
- * you don't have to replace placeholder strings like `FIELD-NAME` manually.
+ * Run before copying the acf-imagecropper folder to your theme or plugin so that
+ * you don't have to replace placeholder strings like `imagecropper` manually.
  *
  * This script should not be copied to your theme or plugin.
  */
@@ -42,9 +42,9 @@ const questions = [
 ];
 
 (async () => {
-  const dir = path.resolve(__dirname, "acf-FIELD-NAME");
+  const dir = path.resolve(__dirname, "acf-imagecropper");
   if (!fs.existsSync(dir)) {
-    console.error("Could not find the acf-FIELD-NAME folder.");
+    console.error("Could not find the acf-imagecropper folder.");
     console.error("You can ony rename a fresh copy of the repo.");
     process.exit(1);
   }
@@ -57,11 +57,11 @@ const questions = [
   }
 
   const replacements = {
-    "class-PREFIX": "class-" + response.prefix.replace(/_/g, "-"),
-    PREFIX: response.prefix,
+    "class-usm": "class-" + response.prefix.replace(/_/g, "-"),
+    usm: response.prefix,
     image_cropper: response.fieldLabel,
     imagecropper: response.fieldLabel.toLowerCase().replace(/[-\s]/g, "_"),
-    "FIELD-NAME": response.fieldLabel.toLowerCase().replace(/[_\s]/g, "-"),
+    "imagecropper": response.fieldLabel.toLowerCase().replace(/[_\s]/g, "-"),
     TEXTDOMAIN: response.textDomain,
   };
 
@@ -83,14 +83,14 @@ const renameFiles = (replacements = {}) => {
   const dir = path.resolve(__dirname);
 
   /**
-   * Rename acf-FIELD-NAME directory first. Prevents write failure during file
+   * Rename acf-imagecropper directory first. Prevents write failure during file
    * renames due to parent directory being renamed by the first find-replace.
    */
   fs.renameSync(
-    path.resolve(__dirname, "acf-FIELD-NAME"),
+    path.resolve(__dirname, "acf-imagecropper"),
     path.resolve(
       __dirname,
-      "acf-FIELD-NAME".replace(/FIELD-NAME/g, replacements["FIELD-NAME"])
+      "acf-imagecropper".replace(/imagecropper/g, replacements["imagecropper"])
     )
   );
 

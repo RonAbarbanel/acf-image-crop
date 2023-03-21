@@ -7,16 +7,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'init', 'PREFIX_include_acf_field_imagecropper' );
+add_action( 'init', 'usm_include_acf_field_imagecropper' );
 /**
  * Registers the ACF field type.
  */
-function PREFIX_include_acf_field_imagecropper() {
+function usm_include_acf_field_imagecropper() {
 	if ( ! function_exists( 'acf_register_field_type' ) ) {
 		return;
 	}
 
-	require_once __DIR__ . '/class-PREFIX-acf-field-FIELD-NAME.php';
+	require_once __DIR__ . '/class-usm-acf-field-imagecropper.php';
 
-	acf_register_field_type( 'PREFIX_acf_field_imagecropper' );
+	acf_register_field_type( 'usm_acf_field_imagecropper' );
 }
