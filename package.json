@@ -4,6 +4,7 @@
     "keywords": ["PHP","ACF","Image","Crop","Cropper"],
     "homepage": "https://github.com/RonAbarbanel/acf-image-crop",
     "type": "library",
+    "minimum-stability": "dev",
     "license": "MIT",
     "require": {
     },
