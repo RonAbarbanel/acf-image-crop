@@ -5,6 +5,8 @@
     "homepage": "https://github.com/RonAbarbanel/acf-image-crop",
     "type": "library",
     "license": "MIT",
+    "require": {
+    },
     "authors": [
         {
             "name": "Ron Abarbanel",
